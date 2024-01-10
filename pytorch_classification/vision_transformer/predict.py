@@ -36,7 +36,7 @@ def main():
         class_indict = json.load(f)
 
     # create model
-    model = create_model(num_classes=5, has_logits=False).to(device)
+    model = create_model(num_classes=5, has_logits=False).to(device) # has_logits训练与预测保持同样状态
     # load model weights
     model_weight_path = "./weights/model-9.pth"
     model.load_state_dict(torch.load(model_weight_path, map_location=device))
